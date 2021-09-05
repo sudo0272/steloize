@@ -73,7 +73,7 @@
 
         resultHtml += `<span>${escapeHtml(text.slice(0, target.index))}</span>`
         text = text.slice(target.index + target[0].length)
-        resultHtml += `<span style="font-family: ${fontFamily}">이부분 폰트가 ${escapeHtml(content)} 바뀝니다</span>`
+        resultHtml += `<span style="font-family: ${fontFamily}">${escapeHtml(content)}</span>`
       }
 
       resultHtml += text
