@@ -6,6 +6,7 @@
 // @author       ecNQTD9AEQECLM4W62ei
 // @include      /^https://cafe.naver.com/stelo([/?].*)?$/
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function() {
