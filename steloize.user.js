@@ -2,10 +2,9 @@
 // @name         Steloize
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  Apply custom fonts to stelo
+// @author       ecNQTD9AEQECLM4W62ei
 // @include      /^https://cafe.naver.com/stelo([/?].*)?$/
-// @icon         https://www.google.com/s2/favicons?domain=naver.com
 // @grant        none
 // ==/UserScript==
 
