@@ -20,7 +20,7 @@
   let iframeDocument;
   let documentFonts = new Set()
   const fontUrls = {
-    'steloize-sej': 'https://steloize-fontfaces.000webhostapp.com/steloize-sej/steloize-sej.woff',
+    'steloize-sej': 'https://steloize-fontfaces.000webhostapp.com/steloize-sej.woff',
     'steloize-klz': 'https://steloize-fontfaces.000webhostapp.com/Kahlcz_Serif_Peron_06.woff'
   }
 
