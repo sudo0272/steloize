@@ -38,14 +38,13 @@
       fontFace.load()
       .then(loadedFont => {
         this.root.fonts.add(loadedFont)
-      }).catch(error => {
-        console.log(error)
-        console.error(`failed to fetch "${fontFamily}" whose url is "${this.getFontUrl(fontFamily)}"`)
+      }).catch(() => {
+        alert(`steloize: ${fontFamily} 폰트 다운로드에 실패했습니다`)
       })
     }
 
     applyFont(element) {
-      if (element.dataset.steloized) {
+      if (!element || element.dataset.steloized) {
         return
       }
 
