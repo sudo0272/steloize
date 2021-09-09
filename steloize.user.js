@@ -68,7 +68,7 @@
         resultHtml += `<span style="font-family: ${fontFamily}">${escapeHtml(content).replaceAll(' ', '&nbsp;')}</span>`
       }
 
-      resultHtml += text
+      resultHtml += text.replaceAll(' ', '&nbsp;')
       resultHtml = resultHtml.replaceAll('\n', '<br>')
       element.innerHTML = resultHtml
 
