@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steloize
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.0.9
 // @description  Apply custom fonts to stelo
 // @author       ecNQTD9AEQECLM4W62ei
 // @include      /^https://cafe.naver.com/stelo([/?].*)?$/
@@ -56,16 +56,34 @@
         const mainText = target[0].slice(2, -2)
         const delimiterIndex = mainText.indexOf('@')
         const content = mainText.substr(delimiterIndex + 1)
-        const fontFamily = `steloize-${escapeHtml(mainText.substr(0, delimiterIndex))}`
+        const subject = mainText.substr(0, delimiterIndex)
+        let fontFamily
 
-        if (!this.appliedFonts.has(fontFamily)) {
+        switch (subject) {
+          case '^':
+            fontFamily = escapeHtml(content)
+            resultHtml += `<span style="font-family: ${fontFamily}">`
+            break
+
+          case '/^':
+            resultHtml += `<span>${escapeHtml(text.slice(0, target.index)).replaceAll(' ', '&nbsp;')}</span>`
+            fontFamily = ''
+            resultHtml += `</span>`
+            break
+
+          default:
+            fontFamily = `steloize-${escapeHtml(subject)}`
+            resultHtml += `<span>${escapeHtml(text.slice(0, target.index)).replaceAll(' ', '&nbsp;')}</span>`
+            resultHtml += `<span style="font-family: ${fontFamily}">${escapeHtml(content).replaceAll(' ', '&nbsp;')}</span>`
+            break
+        }
+
+        if (!this.appliedFonts.has(fontFamily) && fontFamily) {
           this.loadFont(fontFamily)
           this.appliedFonts.add(fontFamily)
         }
 
-        resultHtml += `<span>${escapeHtml(text.slice(0, target.index)).replaceAll(' ', '&nbsp;')}</span>`
-        text = text.slice(target.index + target[0].length)
-        resultHtml += `<span style="font-family: ${fontFamily}">${escapeHtml(content).replaceAll(' ', '&nbsp;')}</span>`
+        text = text.slice(target.index + mainText.length + 4)
       }
 
       resultHtml += text.replaceAll(' ', '&nbsp;')
@@ -185,4 +203,5 @@
     }
   })
 })();
+
 
