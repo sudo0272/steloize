@@ -63,9 +63,9 @@
           this.appliedFonts.add(fontFamily)
         }
 
-        resultHtml += `<span>${escapeHtml(text.slice(0, target.index))}</span>`
+        resultHtml += `<span>${escapeHtml(text.slice(0, target.index)).replaceAll(' ', '&nbsp;')}</span>`
         text = text.slice(target.index + target[0].length)
-        resultHtml += `<span style="font-family: ${fontFamily}">${escapeHtml(content)}</span>`
+        resultHtml += `<span style="font-family: ${fontFamily}">${escapeHtml(content).replaceAll(' ', '&nbsp;')}</span>`
       }
 
       resultHtml += text
