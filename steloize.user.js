@@ -35,7 +35,7 @@
     loadFont(fontFamily) {
       const fontFace = new FontFace(
         fontFamily,
-        `url(https://steloize-fontfaces.000webhostapp.com/${fontFamily}.woff)`
+        `url(https://steloize-fontfaces.000webhostapp.com/font.php?family=${fontFamily})`
       );
 
       fontFace
