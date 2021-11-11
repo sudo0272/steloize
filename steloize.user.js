@@ -7,7 +7,6 @@
 // @include      /^https://cafe.naver.com/stelo([/?].*)?$/
 // @grant        none
 // @license      MIT
-// @downloadURL https://openuserjs.org/install/ecNQTD9AEQECLM4W62ei/Steloize.user.js
 // ==/UserScript==
 
 (function () {
