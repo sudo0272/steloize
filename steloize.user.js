@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Steloize
 // @namespace    http://tampermonkey.net/
-// @version      0.0.9
+// @version      0.0.10
 // @description  Apply custom fonts to stelo
 // @author       ecNQTD9AEQECLM4W62ei
 // @include      /^https://cafe.naver.com/stelo([/?].*)?$/
 // @grant        none
 // @license      MIT
+// @downloadURL https://openuserjs.org/install/ecNQTD9AEQECLM4W62ei/Steloize.user.js
 // ==/UserScript==
 
 (function () {
@@ -35,7 +36,7 @@
     loadFont(fontFamily) {
       const fontFace = new FontFace(
         fontFamily,
-        `url(https://steloize-fontfaces.000webhostapp.com/font.php?family=${fontFamily})`
+        `url(https://steloize.conlang.kr/font.php?family=${fontFamily})`
       );
 
       fontFace
